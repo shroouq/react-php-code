@@ -92,7 +92,7 @@ function Home(){
                     )}
                     else if(item.type ==="Furniture"){
                      return( <div className="item">
-                            <input className="check" type="checkbox" name="deletepro[]" value={item.sku} onChange={handleChange} />
+                            <input className="check" type="checkbox" name="deletepro[]" value={item.id} onChange={handleChange} />
                             <div className="product">
                             {item.sku}
                             <br/>
@@ -107,7 +107,7 @@ function Home(){
                    else if(item.type ==="Book"){
                     return(
                       <div className="item">
-                            <input className="check" type="checkbox" name="deletepro[]" value={item.sku} onChange={handleChange} />
+                            <input className="check" type="checkbox" name="deletepro[]" value={item.id} onChange={handleChange} />
                             <div className="product">
                             {item.sku}
                             <br/>
