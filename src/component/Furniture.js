@@ -11,7 +11,6 @@ export default function Furniture(props) {
             name="height"
             className="data"
             onChange={props.runHandleChange}
-            onInvalid={props.runHandleInvalid2}
             onKeyPress={props.handlenumeric} 
             onPaste={props.handlenumeric}
           />
@@ -25,7 +24,6 @@ export default function Furniture(props) {
             name="width"
             className="data"
             onChange={props.runHandleChange}
-            onInvalid={props.runHandleInvalid3}
             onKeyPress={props.handlenumeric} 
             onPaste={props.handlenumeric}
           />
@@ -40,7 +38,6 @@ export default function Furniture(props) {
             name="length"
             className="data"
             onChange={props.runHandleChange}
-            onInvalid={props.runHandleInvalid1}
             onKeyPress={props.handlenumeric} 
             onPaste={props.handlenumeric}
           />
