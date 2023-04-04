@@ -82,19 +82,16 @@ function Add(props){
     if (isvalid){
    
       //const form = $(e.target);
-      let formData = $("#product_form").serializeArray();
-      let postData = formData.concat($.trim(data));
+      
 
 
     $.ajax({
       type: "POST",
       url: "https://scandiweb22.000webhostapp.com/php/includes/index.php",
      // dataType: 'json',
-      data: postData,
+      data: data,
       complete:function(data) {
-        let value2= $.trim(data.responseText)
         if($.trim(data.responseText)=="false"){
-          console.log(value2)
         setError2("sku is exist");}
           else {
             console.log(data.responseText)
