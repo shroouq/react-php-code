@@ -10,7 +10,6 @@ export default function Book(props) {
             name="weight"
             className="data"
             onChange={props.runHandleChange}
-            onInvalid={props.runHandleInvalid}
             onKeyPress={props.handlenumeric} 
             onPaste={props.handlenumeric}
           />
