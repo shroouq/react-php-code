@@ -16,26 +16,10 @@ function Home(){
         })
       },[]);
 
-    const[data, setData]= useState({
-        sku:[], });
+   
 
 
 
-     //get checked items
-    function handleChange(e){
-        const { value, checked } = e.target;
-        const {id}= data;
-        if (checked) {
-            setData({
-              id: [...id, value],
-            });
-          }
-          else {
-            setData({
-              id: id.filter((e) => e !== value),
-            });
-            }
-    };
        
       //Delete check items
        function handleDelete(e){
@@ -49,7 +33,7 @@ function Home(){
           dataType: "json",
           encode: true,
           success(data) {
-                    setData(data);
+                   console.log(data);
                 },
            })
                window.location.reload(false);
@@ -77,7 +61,7 @@ function Home(){
                     if(item.type==="DVD"){
                     return(
                             <div className="item">
-                            <input className="delete-checkbox" type="checkbox"  name="deletepro[]" value={item.id} onChange={handleChange} />
+                            <input className="delete-checkbox" type="checkbox"  name="deletepro[]" value={item.id}  />
                             <div className="product">
                             {item.sku}
                             <br/>
@@ -92,7 +76,7 @@ function Home(){
                     )}
                     else if(item.type ==="Furniture"){
                      return( <div className="item">
-                            <input className="check" type="checkbox" name="deletepro[]" value={item.id} onChange={handleChange} />
+                            <input className="check" type="checkbox" name="deletepro[]" value={item.id}  />
                             <div className="product">
                             {item.sku}
                             <br/>
@@ -107,7 +91,7 @@ function Home(){
                    else if(item.type ==="Book"){
                     return(
                       <div className="item">
-                            <input className="check" type="checkbox" name="deletepro[]" value={item.id} onChange={handleChange} />
+                            <input className="check" type="checkbox" name="deletepro[]" value={item.id}  />
                             <div className="product">
                             {item.sku}
                             <br/>
