@@ -26,7 +26,7 @@ class Connect extends Db{
 
     //delete from database
     public function deleteProduct($pro){
-        $sql2= "DELETE FROM product WHERE ID IN ('".$pro."' )";
+        $sql2= "DELETE FROM product WHERE ID IN ($pro )";
         //$stmt->bind_param("i", $id);
         $stmt2 = $this->connect()->prepare($sql2);
         $stmt2->execute();
