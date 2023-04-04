@@ -24,15 +24,15 @@ function Home(){
      //get checked items
     function handleChange(e){
         const { value, checked } = e.target;
-        const {sku}= data;
+        const {id}= data;
         if (checked) {
             setData({
-              sku: [...sku, value],
+              id: [...id, value],
             });
           }
           else {
             setData({
-              sku: sku.filter((e) => e !== value),
+              id: id.filter((e) => e !== value),
             });
             }
     };
