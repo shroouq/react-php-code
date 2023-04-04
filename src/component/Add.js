@@ -14,9 +14,6 @@ function Add(props){
 
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-  });
-
   const[data, setData]= useState({
     sku: "",
     name: "",
@@ -68,16 +65,8 @@ function Add(props){
   const handleCancel=()=>{
     navigate('/', {replace: true})
   }
-  const handleChang=(e)=>{
-      const { name, value, type, checked } = e.target;
+  const handleChange=(e)=>{
       setData({ ...data, [e.target.name]: e.target.value });
-      setFormData((setData) => {
-        return {
-          ...setData,
-          [name]: type === "checkbox" ? checked : value,
-        };
-      });
-  
     }
 
     //handle numeric value only
@@ -137,18 +126,18 @@ function Add(props){
             <label className="label">
                 SKU
             </label>
-            <input id="sku" className="data" type="text" name="sku" onChange={handleChang}  />
+            <input id="sku" className="data" type="text" name="sku" onChange={handleChange}  />
             <span>{error1.sku}</span>
             <span>{error2}</span>
             </div>
             <div className="group">
             <label className="label">Name</label>
-            <input id="name" className="data" type="text" name="name" onChange={handleChang}  />
+            <input id="name" className="data" type="text" name="name" onChange={handleChange}  />
             <span>{error1.name}</span>
             </div>
             <div className="group">
             <label className="label">Price</label>
-            <input id="price" className="data" type="text" name="price" onChange={handleChang} onKeyPress ={handlenumeric} on onPaste ={handlenumeric} />
+            <input id="price" className="data" type="text" name="price" onChange={handleChange} onKeyPress ={handlenumeric} on onPaste ={handlenumeric} />
             <span>{error1.price}</span>
             </div>
             <div className="group">
@@ -156,7 +145,7 @@ function Add(props){
             <select
                   id="productType"
                   name="productType"
-                  onChange={handleChang}
+                  onChange={handleChange}
                 >
                    <option id="" name="" value="">
                     Select A Product
@@ -174,20 +163,16 @@ function Add(props){
                 <span>{error1.productType}</span>
                 </div>
 
-                {formData.productType === "DVD" && (
+                {data.productType === "DVD" && (
                 <Dvd
-                  runHandleChange={handleChang}
-                  getDVDValue={formData.size}
+                  runHandleChange={handleChange}
                   runHandleInvalid={error1.size}
                   handlenumeric={handlenumeric}
                 />
               )}
-              {formData.productType === "Furniture" && (
+              {data.productType === "Furniture" && (
                 <Furniture
-                  runHandleChange={handleChang}
-                  getFurnitureHeight={formData.height}
-                  getFurnitureWidth={formData.width}
-                  getFurnitureLength={formData.length}
+                  runHandleChange={handleChange}
                   runHandleInvalid1={error1.length}
                   runHandleInvalid2={error1.height}
                   runHandleInvalid3={error1.width}
@@ -195,10 +180,9 @@ function Add(props){
                 />
               )}
 
-              {formData.productType === "Book" && (
+              {data.productType === "Book" && (
                 <Book
-                  runHandleChange={handleChang}
-                  getBookValue={formData.weight}
+                  runHandleChange={handleChange}
                   runHandleInvalid={error1.weight}
                   handlenumeric={handlenumeric}
                 />
