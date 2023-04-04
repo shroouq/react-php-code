@@ -31,6 +31,7 @@ include("../classes/get_products.php");
         $size = $data->getSize() ;
         $weight = $data->getWeight();
         $length = $data->getLength() ;
+        $dimensions="";
         if($type =="Furniture"){
         $dimensions= $height . "x" . $width ."x" .$length;
         }
