@@ -58,54 +58,36 @@ function Home(){
                     
                 <div className="container">
                    { item.map(item=>{
-                    if(item.type==="DVD"){
                     return(
                             <div className="item">
-                            <input className="delete-checkbox" type="checkbox"  name="deletepro[]" value={item.id}  />
-                            <div className="product">
-                            {item.sku}
-                            <br/>
-                            {item.name}
-                            <br/>
-                            {item.price } $
-                            <br/>
-                            Size: {item.size} MB
+                            <input className="delete-checkbox" type="checkbox"  name="deletepro[]"  value={item.id}  />
+                           
+                            {item.type ==="DVD" && <DvdItem 
+                            sku = {item.sku}
+                            name= {item.name}
+                            price={item.price}
+                            size={item.size}/>}
+
+                            {item.type ==="Book" && <BookItem 
+                            sku = {item.sku}
+                            name= {item.name}
+                            price={item.price}
+                            weight={item.weight}/>}
+
+
+
+                            {item.type ==="Furniture" && <Furnitureitem 
+                            sku = {item.sku}
+                            name= {item.name}
+                            price={item.price}
+                            dimensions={item.dimensions}/>}
 
                             </div>
-                            </div>
                     )}
-                    else if(item.type ==="Furniture"){
-                     return( <div className="item">
-                            <input className="check" type="checkbox" name="deletepro[]" value={item.id}  />
-                            <div className="product">
-                            {item.sku}
-                            <br/>
-                            {item.name}
-                            <br/>
-                            {item.price } $
-                            <br/>
-                            Dimension: {item.dimensions} 
-                            </div>
-                            </div>
-                   )}
-                   else if(item.type ==="Book"){
-                    return(
-                      <div className="item">
-                            <input className="check" type="checkbox" name="deletepro[]" value={item.id}  />
-                            <div className="product">
-                            {item.sku}
-                            <br/>
-                            {item.name}
-                            <br/>
-                            {item.price } $
-                            <br/>
-                            weight: {item.weight} KG
-                            </div>
-                            </div>
-                    )
-                   }
                     
-                  })}
+                   
+                    
+                  )}
                 
                 </div>
            </form>  
