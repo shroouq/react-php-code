@@ -5,6 +5,8 @@ include_once ("../classes/db_connect.php");
 include_once("../classes/setData.php");
 include("../classes/contr_data.php");
 include("../classes/get_products.php");
+include("../classes/prodcttype.php");
+
 
     //check for the post request to add product
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
