@@ -5,10 +5,17 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once("db.php");
 class Connect extends Db{
     //put data into database
-    public function setUser($sku,  $name, $price, $type, $size, $weight, $dimensions){
-        $sql= "INSERT INTO product(sku, name, price, type, size, weight, dimensions)VALUES (?, ?, ? ,? , ? ,? ,? )";
+   public function setUser($data){
+         
+        $columnString = implode(',', array_keys($data));
+        $valueString = implode(',', array_fill(0, count($data), '?'));
+        $sql= "INSERT INTO product ({$columnString}) VALUES ({$valueString})";
         $stmt = $this->connect()->prepare($sql);
-        $s = $stmt->execute([$sku,  $name, $price, $type, $size, $weight, $dimensions]);
+        $s = $stmt->execute(array_values($data));
+
+        foreach($data as $key => $value){
+            $s->bindParam(':' . $key,$array[$key]);
+        }
         return true; 
 
     }
