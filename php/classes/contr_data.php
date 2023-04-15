@@ -5,13 +5,13 @@ include_once("db_connect.php");
 class Contr extends Connect {
 
     //add product to database if the sku is not exist
-    public function addpro($sku,  $name, $price, $type, $size, $weight, $dimensions){
+    public function addpro($sku,  $data){
         if($this->check($sku) == false){
             print_r("false");
             exit();
         }
        else{
-            $this->setUser($sku,  $name, $price, $type, $size, $weight, $dimensions);
+            $this->setUser($data);
             exit();
        }
     }
