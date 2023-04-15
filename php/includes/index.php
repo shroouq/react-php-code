@@ -32,13 +32,12 @@ include("../classes/get_products.php");
         $weight = $data->getWeight();
         $length = $data->getLength() ;
         $dimensions="";
-        if($type =="Furniture"){
         $dimensions= $height . "x" . $width ."x" .$length;
-        }
         
 
-        $addproduct = new Contr();
-        $addproduct->addpro($sku,  $name, $price, $type, $size, $weight, $dimensions);
+        $addproduct = new Datadd();
+
+        $addproduct->attribute( $sku, $name, $price ,$type, $size, $weight, $dimensions);
         
     }
 
