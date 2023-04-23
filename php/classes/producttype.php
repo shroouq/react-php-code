@@ -9,7 +9,7 @@ interface producttype{
 
 
  class Book  implements producttype {
-      public function __construct($sku, $name, $price ,$type,  $weight){
+      public function __construct($sku, $name, $price ,$type,  $size,  $weight, $dimensions){
          $this -> sku = $sku;
          $this -> price = $price;
          $this -> name = $name;
@@ -39,7 +39,7 @@ interface producttype{
   }
 }
 class Furnitureh  implements producttype {
-    public function __construct($sku, $name, $price ,$type, $dimensions){
+    public function __construct($sku, $name, $price ,$type, $size,  $weight, $dimensions){
        $this -> sku = $sku;
        $this -> price = $price;
        $this -> name = $name;
