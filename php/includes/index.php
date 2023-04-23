@@ -33,7 +33,6 @@ include("../classes/prodcttype.php");
         $size = $data->getSize() ;
         $weight = $data->getWeight();
         $length = $data->getLength() ;
-        $dimensions="";
         $dimensions= $height . "x" . $width ."x" .$length;
         
 
