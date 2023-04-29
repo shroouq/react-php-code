@@ -1,55 +1,57 @@
 <?php
 
 include_once("../classes/db.php");
-include_once ("../classes/db_connect.php");
+include_once("../classes/db_connect.php");
 include_once("../classes/setData.php");
 include("../classes/contr_data.php");
 include("../classes/get_products.php");
-include("../classes/prodcttype.php");
+include("../classes/first.php");
+include("../classes/delete_product.php");
 
 
-    //check for the post request to add product
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $data = new Product();
+if(isset($_POST['deletepro'])) {
+    $alldeletepro= $_POST['deletepro'];
+    $extract_pro= implode(',', $alldeletepro);
+    $delete = new Connect();
+    $delete->deleteProduct($extract_pro);
+}
 
-    
-        $data->setSku($_REQUEST['sku']);
-        $data->setName($_REQUEST['name']);
-        $data->setPrice($_REQUEST['price']);
-        $data->setHeight($_REQUEST['height']);
-        $data->setWidth($_REQUEST['width']);
-        $data->setSize($_REQUEST['size' ]);
-        $data->setWeight($_REQUEST['weight']);
-        $data->setLength($_REQUEST['length']);
-        $data->setType($_REQUEST['productType']);
+//check for the post request to add product
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $data = new Product();
 
 
-        $sku= $data->getSku() ;
-        $name= $data->getName() ;
-        $price = $data->getPrice();
-        $type = $data->getType();
-        $height= $data->getHeight() ;
-        $width = $data->getWidth() ;
-        $size = $data->getSize() ;
-        $weight = $data->getWeight();
-        $length = $data->getLength() ;
-        $dimensions= $height . "x" . $width ."x" .$length;
-        
+    $data->setSku($_REQUEST['sku']);
+    $data->setName($_REQUEST['name']);
+    $data->setPrice($_REQUEST['price']);
+    $data->setHeight($_REQUEST['height']);
+    $data->setWidth($_REQUEST['width']);
+    $data->setSize($_REQUEST['size' ]);
+    $data->setWeight($_REQUEST['weight']);
+    $data->setLength($_REQUEST['length']);
+    $data->setType($_REQUEST['productType']);
 
-        $addproduct = new Datadd();
+    $sku= $data->getSku() ;
+    $name= $data->getName() ;
+    $price = $data->getPrice();
+    $type = $data->getType();
+    $height= $data->getHeight() ;
+    $width = $data->getWidth() ;
+    $size = $data->getSize() ;
+    $weight = $data->getWeight();
+    $length = $data->getLength() ;
+    $dimensions= $height . "x" . $width ."x" .$length;
 
-        $addproduct->attribute( $sku, $name, $price ,$type, $size, $weight, $dimensions);
-        
-    }
+    $addproduct = new Datadd();
 
-    //check for the get request to get data from database
+    $addproduct->attribute($sku, $name, $price, $type, $size, $weight, $dimensions);
 
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        $connect = new Get();
-        $products = $connect->getdata();
-        print_r($products);
-        
-    }
+}
 
+//check for the get request to get data from database
 
-?>
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $connect = new Get();
+    $products = $connect->getdata();
+    print_r($products);
+}
