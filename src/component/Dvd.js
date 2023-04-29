@@ -4,23 +4,23 @@ import React from "react";
 export default function DVD(props) {
   return (
     <div>
-        <div className="group">
+      <div className="group">
 
-          <label >Size (MB)</label>
-          <input
-            id="size"
-            name="size"
-            className="data"
-            onChange={props.runHandleChange}
-            onKeyPress={props.handlenumeric} 
-            onPaste={props.handlenumeric}
-          />
+        <label >Size (MB)</label>
+        <input
+          id="size"
+          name="size"
+          className="data"
+          onChange={props.runHandleChange}
+          onKeyPress={props.handlenumeric}
+          onPaste={props.handlenumeric}
+        />
         <span>{props.runHandleInvalid}</span>
-        </div>
+      </div>
 
-        
+
       <div className="text">
-                   Please, provide size in MB
+        Please, provide size in MB
       </div>
     </div>
   );
