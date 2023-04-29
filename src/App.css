@@ -1,78 +1,80 @@
-
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content:first baseline;
-    margin:80px;
+    justify-content: first baseline;
+    margin: 80px;
     margin-left: 180px;
     padding: 5px;
 }
 
-.delete-checkbox{
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  font-size: 18px;
-  margin: 10px;
+.delete-checkbox {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 18px;
+    margin: 10px;
 }
 
 .item {
     position: relative;
     width: 240px;
     height: 180px;
-    padding:30px;
+    padding: 30px;
     background-color: rgb(255, 248, 248);
     color: black;
     box-shadow: inset 1px 1px 3px #333333;
     padding: 10px;
-    margin:40px;
+    margin: 40px;
 }
-.product{
+
+.product {
     text-align: center;
     margin-top: 20px;
 }
-.item:hover{
+
+.item:hover {
     box-shadow: 5px 0px 25px black;
     transform: scale(1.05);
 
 }
 
-.form-container{
+.form-container {
     margin: 60px;
 }
 
-.group{
+.group {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 10px 600px 0 30px;
 }
-label{
+
+label {
     display: block;
-      margin: 0 0 10px;
-      color: gray;
-      font-size: 12px;
-      line-height: 1;
-      letter-spacing: .2em;
-      font-size: 20px;
-      font-style: italic;
+    margin: 0 0 10px;
+    color: gray;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: .2em;
+    font-size: 20px;
+    font-style: italic;
 
 }
 
-.data{
-  
-     outline: none;
-      display: block;
-      background: rgb(235, 232, 232);
-      width: 100%;
-      border: 0;
-      border-radius: 4px;
-      padding: 12px 20px;
-      line-height:20px;
-      transition: 0.3s ease;
-      font-size: 20px;
+.data {
 
-    }
+    outline: none;
+    display: block;
+    background: rgb(235, 232, 232);
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 20px;
+    line-height: 20px;
+    transition: 0.3s ease;
+    font-size: 20px;
+
+}
 
 .data:focus {
     box-shadow: 5px 0px 25px black;
@@ -80,63 +82,64 @@ label{
 
 
 
-.group:has(.data:focus) label{
+.group:has(.data:focus) label {
     color: rgb(15, 15, 15);
     font-size: 25px;
     font-style: italic;
-   }
-   
+}
 
-.text{
+
+.text {
     font-size: 22px;
     font-style: italic;
 
 }
 
-#productType{
+#productType {
     outline: none;
     display: block;
-    background:  #0563af;
+    background: #0563af;
     width: 450px;
     border: 0;
     border-radius: 4px;
     padding: 12px 20px;
-    line-height:20px;
+    line-height: 20px;
     transition: 0.3s ease;
     font-size: 20px;
     appearance: button;
 }
-#productType:focus{
-    background:  #0e7ad3;
+
+#productType:focus {
+    background: #0e7ad3;
 }
 
-.group:has(#productType:focus) label{
+.group:has(#productType:focus) label {
     color: rgb(15, 15, 15);
     font-size: 25px;
     font-style: italic;
-   }
+}
 
-span{
+span {
     color: red;
 }
 
 @media only screen and (max-width: 768px) {
-    .data{
-         border: 0;
-         border-radius: 4px;
-         padding: 12px 150px;
-         line-height:20px;
-         transition: 0.3s ease;
-         font-size: 40px;
-         color: black;
-       }
+    .data {
+        border: 0;
+        border-radius: 4px;
+        padding: 12px 150px;
+        line-height: 20px;
+        transition: 0.3s ease;
+        font-size: 40px;
+        color: black;
+    }
 
-       .container {
-        
-        margin:30px;
+    .container {
+
+        margin: 30px;
         margin-left: 90px;
         padding: 5px;
     }
-    
-       
+
+
 }
