@@ -8,7 +8,7 @@ include("../classes/get_products.php");
 include("../classes/first.php");
 include("../classes/delete_product.php");
 
-
+//check for the request to delete product
 if(isset($_POST['deletepro'])) {
     $alldeletepro= $_POST['deletepro'];
     $extract_pro= implode(',', $alldeletepro);
