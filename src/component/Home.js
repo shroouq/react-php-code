@@ -11,7 +11,7 @@ function Home() {
   const [item, setItem] = useState([])
   // get list of products from database
   useEffect(() => {
-    fetch("http://localhost/php/includes/index.php")
+    fetch("http://localhost/php/controller/Contact")
       .then(res => res.json())
       .then(
         (result) => {
@@ -29,7 +29,7 @@ function Home() {
     console.log(form);
     $.ajax({
       type: "POST",
-      url: "http://localhost/php/includes/index.php",
+      url: "http://localhost/php/controller/ControllerDelete",
       data: form.serialize(),
       dataType: "json",
       encode: true,
