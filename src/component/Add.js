@@ -100,7 +100,7 @@ function Add(props) {
 
       $.ajax({
         type: "POST",
-        url: "http://localhost/php/includes/index.php",
+        url: "http://localhost/php/controller/Contact",
         // dataType: 'json',
         data: data,
         complete: function (data) {
