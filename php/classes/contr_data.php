@@ -1,6 +1,5 @@
 <?php
 
-include_once("db_connect.php");
 
 class Contr extends Connect
 {
