@@ -1,8 +1,5 @@
 <?php
 
-include_once("db.php");
-include_once("db_connect.php");
-
 
 class Delete extends Connect
 {
